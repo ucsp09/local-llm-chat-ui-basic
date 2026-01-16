@@ -10,8 +10,12 @@ async def callOllamaChatAPIWithMessagesAndNoStream(session: aiohttp.ClientSessio
         payload = {
             "model": model,
             "messages": messages,
-            "max_tokens": constants.OLLAMA_MAX_RESPONSE_TOKENS,
-            "stream": False
+            "stream": False,
+            "options":{
+                "num_predict": constants.OLLAMA_MAX_RESPONSE_TOKENS,
+                "num_ctx": constants.OLLAMA_CONTEXT_SIZE,
+                "temperature": constants.OLLAMA_DEFAULT_TEMPERATURE
+            }
         }
         print("Making request to ollama generate API ...")
         print(f"curl -X POST {url} -d \'{payload}\' -H \"Content-Type: application/json\"")
