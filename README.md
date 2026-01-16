@@ -1,2 +1,2 @@
 # local-llm-chat-ui-basic
-Basic LLM Chat UI With History Management
+Basic Chat UI With No Streaming With No Message History Using a Locally Deployed LLM 
